@@ -59,7 +59,6 @@ class MoviesFragment : Fragment() {
                 }
             }
 
-
             rlMovies.apply {
                 layoutManager = LinearLayoutManager(requireContext())
                 adapter = moviesAdapter
