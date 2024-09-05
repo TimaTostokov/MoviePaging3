@@ -22,7 +22,6 @@ class MoviesViewModel @Inject constructor(private val repository: ApiRepository)
         MoviesPagingSource(repository)
     }.flow.cachedIn(viewModelScope)
 
-
     val detailsMovie = MutableLiveData<MovieDetailsResponse>()
     fun loadDetailsMovie(id: Int) = viewModelScope.launch {
         loading.postValue(true)

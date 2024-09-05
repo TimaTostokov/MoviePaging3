@@ -35,7 +35,7 @@ object ApiModule {
 
     @Singleton
     @Provides
-    fun provideOkHttpClient() = if (BASE_URL != null) {
+    fun provideOkHttpClient() = run {
         val loggingInterceptor = HttpLoggingInterceptor()
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.HEADERS)
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -58,10 +58,6 @@ object ApiModule {
             .Builder()
             .addInterceptor(requestInterceptor)
             .addInterceptor(loggingInterceptor)
-            .build()
-    } else {
-        OkHttpClient
-            .Builder()
             .build()
     }
 

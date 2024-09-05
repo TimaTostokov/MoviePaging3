@@ -41,7 +41,7 @@ class MoviesAdapter @Inject() constructor() :
                 tvMovieName.text = item.title
                 tvMovieDateRelease.text = item.releaseDate
                 tvRate.text = item.voteAverage.toString()
-                val moviePosterURL = POSTER_BASE_URL + item?.posterPath
+                val moviePosterURL = POSTER_BASE_URL + item.posterPath
                 imgMovie.load(moviePosterURL) {
                     crossfade(true)
                     placeholder(R.drawable.poster_placeholder)
